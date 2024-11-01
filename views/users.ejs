@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form method="get" action="/users">
+    <label for="name">名前を入力</label>
+    <input type="text" name="name" id="name">
+    <button>submit</button>
+  </form>
+  <turbo-frame id="users">
+    <ul>
+      <% if (users.length === 0) { %>
+        <li>ユーザーが見つかりませんでした</li>
+      <% } else { %>
+        <% users.forEach(user => { %>
+          <li><%= user.name %></li>
+        <% }) %>
+      <% } %>
+    </ul>
+  </turbo-frame>
+</body>
+</html>
