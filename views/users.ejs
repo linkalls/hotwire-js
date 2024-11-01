@@ -11,16 +11,14 @@
     <input type="text" name="name" id="name">
     <button>submit</button>
   </form>
-  <turbo-frame id="users">
-    <ul>
-      <% if (users.length === 0) { %>
-        <li>ユーザーが見つかりませんでした</li>
-      <% } else { %>
-        <% users.forEach(user => { %>
-          <li><%= user.name %></li>
-        <% }) %>
-      <% } %>
-    </ul>
-  </turbo-frame>
+  <ul>
+    <% if (users.length === 0) { %>
+      <li>ユーザーが見つかりませんでした</li>
+    <% } else { %>
+      <% users.forEach(user => { %>
+        <li><%= user.name %></li>
+      <% }) %>
+    <% } %>
+  </ul>
 </body>
 </html>
